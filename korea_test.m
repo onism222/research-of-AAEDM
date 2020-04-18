@@ -37,7 +37,7 @@ for i = 1 : length(real_data_koera)
 end
 
 
-% ======================= Average Error =======================
+% ======================= average error =======================
 error_korea = pred_data_korea - real_data_koera;
 average_error_korea = abs(mean(error_korea./real_data_koera));
 %disp(['in Korea, if kappa = ', num2str(kappa_korea),  ', and zeta = ', num2str(zeta_korea), ', the Average Error is ', num2str(average_error_korea)]);
@@ -45,7 +45,7 @@ average_error_korea = abs(mean(error_korea./real_data_koera));
 
 
 %======================= NMSE =======================
-%NMSE: Normalized Mean Square Error, NMSE
+% NMSE: Normalized Mean Square Error, NMSE
 % NMSE_korea = norm(pred_data_korea - real_data_koera, 2)^2 / norm(real_data_koera, 2)^2;
 % NMSE_dB_korea = 10 * log10(NMSE_korea);
 % disp(['in Korea, if kappa = ', num2str(kappa_korea),  ', and zeta = ', num2str(zeta_korea), ', then the Average Error is ',...
