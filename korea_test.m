@@ -14,7 +14,7 @@ real_data_koera = xlsread('\AAEDM_new\Covid19.xlsx',1, 'D51 : D67'); % real tota
 real_data_koera = reshape(real_data_koera, 1, length(real_data_koera));
 % =================== end =================== 
 
-%% Obtain parameters
+% Obtain parameters
 % =================== obain zeta and kappa =================== 
 kappa_korea = kappa_factor(real_C_korea, real_delta_korea); % cure factor, equation (2.5)
 disp(['from the real data, the kappa (cure) factor is ', num2str(kappa_korea)]);
@@ -27,7 +27,7 @@ first_day_infected_korea = real_delta_korea(end); %  the delta_1^0 in equation (
 disp(['============== kappa = ', num2str(kappa_korea), ', zeta = ', num2str(zeta_korea),', let us predict from 3.15 to 3.31 ==============']);
 
 
-%% Predicting 
+% Predicting 
 for i = 1 : length(real_data_koera)
     pred_total_infected_number_korea = total_infected(initial_infected_korea, first_day_infected_korea, i, kappa_korea, zeta_korea);
     disp(['===== the day ', num2str(i), '=====']);
@@ -37,7 +37,7 @@ for i = 1 : length(real_data_koera)
 end
 
 
-%% ======================= Average Error =======================
+% ======================= Average Error =======================
 error_korea = pred_data_korea - real_data_koera;
 average_error_korea = abs(mean(error_korea./real_data_koera));
 %disp(['in Korea, if kappa = ', num2str(kappa_korea),  ', and zeta = ', num2str(zeta_korea), ', the Average Error is ', num2str(average_error_korea)]);
@@ -53,7 +53,7 @@ average_error_korea = abs(mean(error_korea./real_data_koera));
 %======================= end =======================
 
 
-%% ======================= plot =======================
+% ======================= plot =======================
 x_korea = 1 : length(real_data_koera); 
 figure
 plot(x_korea, pred_data_korea , 'r-x', 'LineWidth', 1.5, 'MarkerSize', 6);
