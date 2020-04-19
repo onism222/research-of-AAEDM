@@ -1,6 +1,6 @@
 clear;
 close all; 
-% Input data
+%% Input data
 % =================== read excel, 2.21 - 3.14 =================== 
 real_delta_korea = xlsread('Covid19.xlsx',1, 'E28 : E50'); % real daily increase number
 real_delta_korea = reshape(real_delta_korea, 1, length(real_delta_korea));
