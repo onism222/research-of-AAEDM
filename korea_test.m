@@ -2,15 +2,15 @@ clear;
 close all; 
 % Input data
 % =================== read excel, 2.21 - 3.14 =================== 
-real_delta_korea = xlsread('\AAEDM_new\Covid19.xlsx',1, 'E28 : E50'); % real daily increase number
+real_delta_korea = xlsread('Covid19.xlsx',1, 'E28 : E50'); % real daily increase number
 real_delta_korea = reshape(real_delta_korea, 1, length(real_delta_korea));
 
-real_C_korea = xlsread('\AAEDM_new\Covid19.xlsx',1, 'G28 : G50'); % real daily cured number 
+real_C_korea = xlsread('Covid19.xlsx',1, 'G28 : G50'); % real daily cured number 
 real_C_korea = reshape(real_C_korea, 1, length(real_C_korea));
 % =================== end =================== 
 
 % =================== read excel, 3.15 - 3.31 =================== 
-real_data_koera = xlsread('\AAEDM_new\Covid19.xlsx',1, 'D51 : D67'); % real total infected number 
+real_data_koera = xlsread('Covid19.xlsx',1, 'D51 : D67'); % real total infected number 
 real_data_koera = reshape(real_data_koera, 1, length(real_data_koera));
 % =================== end =================== 
 
