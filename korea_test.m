@@ -25,7 +25,7 @@ initial_infected_korea = 8086; %  the N_0^0 in equation (2.10)
 first_day_infected_korea = real_delta_korea(end); %  the delta_1^0 in equation (2.10)
 
 disp(['============== kappa = ', num2str(kappa_korea), ', zeta = ', num2str(zeta_korea),', let us predict from 3.15 to 3.31 ==============']);
-
+% ======================= end =======================
 
 % Predicting 
 for i = 1 : length(real_data_koera)
@@ -35,22 +35,22 @@ for i = 1 : length(real_data_koera)
     disp(['the REAL of total infected number on the day ', num2str(i),  ' in Korea is ', num2str(real_data_koera(i))]);
     pred_data_korea(i) = pred_total_infected_number_korea;
 end
-
+% ======================= end =======================
 
 % ======================= average error =======================
 error_korea = pred_data_korea - real_data_koera;
 average_error_korea = abs(mean(error_korea./real_data_koera));
 %disp(['in Korea, if kappa = ', num2str(kappa_korea),  ', and zeta = ', num2str(zeta_korea), ', the Average Error is ', num2str(average_error_korea)]);
-%======================= end =======================
+% ======================= end =======================
 
 
-%======================= NMSE =======================
+% ======================= NMSE =======================
 % NMSE: Normalized Mean Square Error, NMSE
 % NMSE_korea = norm(pred_data_korea - real_data_koera, 2)^2 / norm(real_data_koera, 2)^2;
 % NMSE_dB_korea = 10 * log10(NMSE_korea);
 % disp(['in Korea, if kappa = ', num2str(kappa_korea),  ', and zeta = ', num2str(zeta_korea), ', then the Average Error is ',...
 %     num2str(average_error_korea), ' and the NMSE is ', num2str(NMSE_korea)]);
-%======================= end =======================
+% ======================= end =======================
 
 
 % ======================= plot =======================
@@ -68,7 +68,7 @@ str = {'zeta = ', num2str(zeta_korea), 'kappa = ', num2str(kappa_korea), 'averag
 text(4,10000,str)
 set(gca, 'color',  [1, 0.9, 0.8]);
 grid on;
-%======================= end =======================
+% ======================= end =======================
 
 
 
