@@ -1,4 +1,4 @@
-function [zeta_result] =zeta_factor(delta) % j = 2,....,U, ÇÒC>=2
+function [zeta_result] =zeta_factor(delta)
 
 U = length(delta); 
 delta_before = delta(1 : end-1); 
