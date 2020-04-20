@@ -37,9 +37,9 @@ figure
 plot(x, pred_data , 'r-x', 'LineWidth', 1.5, 'MarkerSize', 6);
 hold on
 plot(x, real_data , 'k-*', 'LineWidth', 1.5, 'MarkerSize', 6);
-leg = legend('Prediction from 3.15 to 3.31', 'Real data from 3.15 to 3.31');
+leg = legend('Prediction from 3.22 to 3.31', 'Real data from 3.22 to 3.31');
 set(leg, 'Location', 'NorthWest') 
-title('UK Prediction from 3.15 to 3.31')
+title('UK Prediction from 3.22 to 3.31')
 xlabel('Day Sequence [n-th Day]', 'FontSize', 12, 'FontName', 'Arial');
 ylabel('Number of Infected People', 'FontSize', 12, 'FontName', 'Arial');
 str = {'zeta = ', num2str(zeta), 'kappa = ', num2str(kappa), 'average error = ', num2str(average_error_italy)};
