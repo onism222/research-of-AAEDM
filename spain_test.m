@@ -2,13 +2,13 @@ clear;
 clc;
 close all; 
 
-real_delta = xlsread('\Covid19.xlsx',5, 'E26 : E55'); % real daily increase number
+real_delta = xlsread('\Covid19.xlsx',5, 'E26 : E55'); % real daily increase number 2.21 - 3.21
 real_delta = reshape(real_delta, 1, length(real_delta));
 
-real_C = xlsread('\Covid19.xlsx',5, 'G26 : G55'); % real daily cured number 
+real_C = xlsread('\Covid19.xlsx',5, 'G26 : G55'); % real daily cured number 2.21 - 3.21
 real_C = reshape(real_C, 1, length(real_C));
 
-real_data = xlsread('\Covid19.xlsx',5, 'D56 : D65'); % real total infected number 
+real_data = xlsread('\Covid19.xlsx',5, 'D56 : D65'); % real total infected number 3.22 - 3.31
 real_data = reshape(real_data, 1, length(real_data));
 
 kappa = kappa_factor(real_C, real_delta); % cure factor
@@ -18,7 +18,7 @@ disp(['from the real data, the zeta (infect) factor is ', num2str(zeta)]);
 
 initial_infected = 26429; % N_0^0
 first_day_infected = real_delta(end); % delta_1^0
-disp(['============== kappa = ', num2str(kappa), ', zeta = ', num2str(zeta),', predict from 3.15 to 3.31 ==============']);
+disp(['============== kappa = ', num2str(kappa), ', zeta = ', num2str(zeta),', predict from 3.22 to 3.31 ==============']);
 
 for i = 1 : length(real_data)
     pred_total_infected_number = total_infected(initial_infected, first_day_infected, i, kappa, zeta);
